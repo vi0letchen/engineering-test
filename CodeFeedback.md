@@ -27,7 +27,7 @@
 - Line 62-65: Method GetBobs is never used internally.
 
 **Naming Issues**
-- Line 7: Class name "People" is pural which doesn't serve the purpose of the class for a single person.
+- Line 7: Class name "People" is plural which doesn't serve the purpose of the class for a single person.
 - Line 9: "Under16" is a confusing constant name and it doesn't describe the purpose clearly.
 - Line 16: "BirthingUnit" is a confusing class name and it doesn't describe the purpose clearly.
 - Line 35: "i" is not a descriptive parameter name.
