@@ -39,10 +39,13 @@ public class Program
     {
         foreach (var item in Items)
           {     
+               //Sulfuras does not change
                if (item.Name != "Sulfuras, Hand of Ragnaros")
                {
+                    // Update Quality when item is Aged Brie
                     if (item.Name == "Aged Brie")
                     {   
+                         // Double quality increase if sell by date has passed
                         if (item.SellIn < 0)
                          {
                             item.Quality = System.Math.Min(item.Quality + 2, 50);
@@ -53,8 +56,10 @@ public class Program
                          }
                     }
 
+                    // Update Quality when item is Backstage passes
                     else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
                     {
+                         // Quality increases as sell by date approaches
                          if (item.SellIn > 10)
                          {
                               item.Quality = System.Math.Min(item.Quality + 1, 50);
@@ -72,8 +77,10 @@ public class Program
                               item.Quality = 0;
                          }
                     }
+                    // Update Quality for conjured items
                     else if (item.Name.StartsWith("Conjured"))
-                    {
+                    {    
+                         // Degrade in Quality twice as fast if sell by date has passed
                          if (item.SellIn < 0)
                          {
                               item.Quality = System.Math.Max(item.Quality - 4, 0);
@@ -83,8 +90,10 @@ public class Program
                               item.Quality = System.Math.Max(item.Quality - 2, 0);
                          }
                     }
+                    // Update Quality for all other items
                     else
                     {
+                         // Degrade in Quality twice as fast if sell by date has passed
                          if (item.SellIn < 0)
                          {
                               item.Quality = System.Math.Max(item.Quality - 2, 0);
@@ -94,6 +103,7 @@ public class Program
                                 item.Quality = System.Math.Max(item.Quality - 1, 0);
                          }
                     }
+                    // Decrease SellIn for all items except Sulfuras
                     item.SellIn -= 1;
                }
           }

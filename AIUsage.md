@@ -1,6 +1,6 @@
 # Use of Generative AI
 
-**AI Tool Used:** Comet Assistant, Claude (Sonnet 4.5)
+**AI Tool Used:** Comet Assistant, Claude (Sonnet 4.5), Copilot
 
 ## Exercise 1
 - I used Comet to search for a format for PR review as a separate file, because I only had experience writting PR feedback on github before.
@@ -14,6 +14,7 @@ Line 7: Class name "People" is plural which doesn't serve the purpose of the cla
 Line 9: "Under16" is a confusing constant name and it doesn't describe the purpose clearly.
 
 ## Exercise 2
+- While modifying method UpdateQuality, Copilot on VS Code had been auto-suggesting code or comment completions. I looked at the suggestions and if it provided the correct approach, I would accept it to save time writting the part my own.
 - After finishing writing my own UpdateQuality method, I gave my code to Claude to check if I have covered everything right. Claude found a few issues for me and I changed them based on its feedback, this includes:
 I didn't implement else statement after if for some loops, which would make the method process both conditions.
 Using System.Math.Min(item.Quality + 2, 50) to do quality modification instead of using simple plus or minus, it is a better approach because it prevents item's quality to exceed 50 or go below 0 without using too many if statements which would make the code look confusing. 
